@@ -279,7 +279,7 @@ export default function Home() {
             >
               <div>© 2026 VISCERA STUDIO</div>
               <div style={{ display: "flex", gap: "30px" }}>
-                <span>INSTAGRAM</span>
+                <span>INSTAGRAM1</span>
                 <span>TWITTER/X</span>
                 <span>BEHANCE</span>
               </div>
