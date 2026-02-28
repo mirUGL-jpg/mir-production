@@ -84,7 +84,7 @@ export default function Home() {
       <div className="blob" id="cursor-blob"></div>
 
       <nav>
-        <div className="logo">VISCERA ©26</div>
+        <div className="logo">MIR.PRODUCTION</div>
         <ul className="nav-links">
           <li>
             <a href="#work">Work</a>
@@ -109,10 +109,10 @@ export default function Home() {
           />
           <div className="hero-title-container container">
             <span className="huge-type parallax-text" data-speed="-2">
-              VISION
+              MIR
             </span>
             <span className="huge-type outline-text parallax-text" data-speed="2" style={{ paddingLeft: "200px" }}>
-              SYSTEMS
+              PRODUCTION
             </span>
           </div>
         </section>
