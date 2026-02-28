@@ -102,8 +102,8 @@ export default function Home() {
         {/* HERO SECTION */}
         <section id="hero">
           <img
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1200"
-            alt="Editorial"
+            src="/media/hero2.jpg"
+            alt="Моё фото"
             className="hero-img"
             id="hero-img"
           />
