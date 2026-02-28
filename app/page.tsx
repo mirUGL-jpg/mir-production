@@ -147,8 +147,8 @@ export default function Home() {
         {/* MARQUEE */}
         <div className="scrolling-marquee">
           <div className="marquee-inner">
-            <span className="huge-type outline-text">MIR.PRODUCTION — CINEMATIC CONTENT THAT BUILDS AUTHORITY — </span>
-            <span className="huge-type outline-text">MIR.PRODUCTION — CINEMATIC CONTENT THAT BUILDS AUTHORITY — </span>
+            <span className="huge-type outline-text">MIR.PRODUCTION — REELS • PODCASTS • LIVE • COMMERCIAL • CINEMATIC STORYTELLING — </span>
+            <span className="huge-type outline-text">MIR.PRODUCTION — REELS • PODCASTS • LIVE • COMMERCIAL • CINEMATIC STORYTELLING — </span>
           </div>
         </div>
 
