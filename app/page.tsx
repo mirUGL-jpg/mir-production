@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
+import Link from "next/link";
 
 export default function Home() {
   useEffect(() => {
@@ -87,7 +88,7 @@ export default function Home() {
         <div className="logo">MIR.PRODUCTION</div>
         <ul className="nav-links">
           <li>
-            <a href="#work">Work</a>
+            <Link href="/works">WORK</Link>
           </li>
           <li>
             <a href="#about">Studio</a>
