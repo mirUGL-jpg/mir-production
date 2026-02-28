@@ -118,31 +118,29 @@ export default function Home() {
         </section>
 
         {/* INTRO */}
-        <section id="about">
-          <div className="container">
-            <div style={{ maxWidth: "800px" }}>
-              <h2
-                style={{
-                  fontSize: "3rem",
-                  fontFamily: "var(--syne)",
-                  marginBottom: "40px",
-                }}
-              >
-                WE BUILD DIGITAL ARTIFACTS THAT SHATTER THE NOISE.
-              </h2>
-              <p
-                style={{
-                  fontSize: "1.5rem",
-                  fontWeight: 300,
-                  color: "#888",
-                }}
-              >
-                Visceral aesthetic. Technical precision. We operate at the intersection of high-fashion editorial and
-                brutalist digital architecture.
-              </p>
-            </div>
-          </div>
-        </section>
+     <section id="about">
+  <div style={{ maxWidth: "800px", margin: "0 auto", padding: "120px 20px" }}>
+    <h2 style={{ fontSize: "3rem", marginBottom: "40px" }}>
+      About Me
+    </h2>
+
+    <p style={{ marginBottom: "20px", lineHeight: "1.8", opacity: 0.85 }}>
+      My name is <strong>Miroslav Uglanov</strong>, a Dubai-based videographer with over five years of professional experience in visual storytelling and premium content production.
+    </p>
+
+    <p style={{ marginBottom: "20px", lineHeight: "1.8", opacity: 0.85 }}>
+      I collaborate with influencers, entrepreneurs, and established companies across the UAE, helping brands grow through high-impact visual content.
+    </p>
+
+    <p style={{ marginBottom: "20px", lineHeight: "1.8", opacity: 0.85 }}>
+      From cinematic reels and podcast production to live streams and branded campaigns, I deliver powerful visuals designed to capture attention and drive results.
+    </p>
+
+    <p style={{ lineHeight: "1.8", opacity: 0.85 }}>
+      Based in Dubai. Working worldwide.
+    </p>
+  </div>
+</section>
 
         {/* MARQUEE */}
         <div className="scrolling-marquee">
