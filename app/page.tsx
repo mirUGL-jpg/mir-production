@@ -61,10 +61,10 @@ export default function Home() {
     })
 
     // Add smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", (e) => {
         e.preventDefault()
-        const href = (this as HTMLAnchorElement).getAttribute("href")
+        const href = anchor.getAttribute("href")
         if (href) {
           document.querySelector(href)?.scrollIntoView({
             behavior: "smooth",
@@ -155,7 +155,7 @@ export default function Home() {
 
         {/* WORK SECTION */}
         <section id="work" className="container">
-          <div className="sticky-type">ARCHIVE</div>
+          <div className="sticky-type">EXPERTISE</div>
 
           {/* Project 1 */}
           <div className="project-row">
