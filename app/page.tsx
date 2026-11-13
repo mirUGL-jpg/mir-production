@@ -1,9 +1,28 @@
 "use client"
 
-import { useEffect } from "react"
-import Link from "next/link";
+import { useEffect, useState } from "react"
+import Link from "next/link"
+
+const livePhotos = [
+  "/media/live2.png",
+  "/media/live1.png",
+  "/media/live3.png",
+  "/media/live4.png",
+  "/media/live5.png",
+  "/media/live6.png",
+]
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? livePhotos.length - 1 : prev - 1))
+  }
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === livePhotos.length - 1 ? 0 : prev + 1))
+  }
+
   useEffect(() => {
     // Mouse Blob Follower
     const blob = document.getElementById("cursor-blob")
@@ -61,7 +80,7 @@ export default function Home() {
     })
 
     // Add smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", (e) => {
         e.preventDefault()
         const href = anchor.getAttribute("href")
@@ -118,32 +137,32 @@ export default function Home() {
           </div>
         </section>
 
-       {/* INTRO */}
-<section id="about">
-  <div className="container">
-    <div style={{ maxWidth: "800px" }}>
-      <h2
-        style={{
-          fontSize: "3rem",
-          fontFamily: "var(--syne)",
-          marginBottom: "40px",
-        }}
-      >
-        DUBAI-BASED VIDEOGRAPHER CRAFTING VISUAL STORIES THAT ELEVATE BRANDS.
-      </h2>
+        {/* INTRO */}
+        <section id="about">
+          <div className="container">
+            <div style={{ maxWidth: "800px" }}>
+              <h2
+                style={{
+                  fontSize: "3rem",
+                  fontFamily: "var(--syne)",
+                  marginBottom: "40px",
+                }}
+              >
+                DUBAI-BASED VIDEOGRAPHER CRAFTING VISUAL STORIES THAT ELEVATE BRANDS.
+              </h2>
 
-      <p
-        style={{
-          fontSize: "1.5rem",
-          fontWeight: 300,
-          color: "#888",
-        }}
-      >
-        My name is Miroslav Uglanov. With over five years of professional experience in video production, I collaborate with influencers and established companies across the UAE. From cinematic reels and podcast production to live streaming and branded campaigns, I create powerful visual content designed to capture attention and drive real engagement.
-      </p>
-    </div>
-  </div>
-</section>
+              <p
+                style={{
+                  fontSize: "1.5rem",
+                  fontWeight: 300,
+                  color: "#888",
+                }}
+              >
+                My name is Miroslav Uglanov. With over five years of professional experience in video production, I collaborate with influencers and established companies across the UAE. From cinematic reels and podcast production to live streaming and branded campaigns, I create powerful visual content designed to capture attention and drive real engagement.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* MARQUEE */}
         <div className="scrolling-marquee">
@@ -157,27 +176,128 @@ export default function Home() {
         <section id="work" className="container">
           <div className="sticky-type">EXPERTISE</div>
 
-          {/* Project 1 */}
-          <div className="project-row">
-            <div className="project-info">
-              <span style={{ fontFamily: "var(--syne)", color: "var(--accent)" }}>001 / FASHION</span>
-              <h3 className="huge-type" style={{ fontSize: "6rem", margin: "20px 0" }}>
-                NOIR
+          {/* Project 1: LIVE STREAMING */}
+          <div className="project-row" style={{ alignItems: "center" }}>
+            <div className="project-info" style={{ paddingTop: 0 }}>
+              <span style={{ fontFamily: "var(--syne)", color: "var(--accent)", letterSpacing: "0.05em" }}>
+                001 / LIVE STREAMING
+              </span>
+                            <h3 className="huge-type" style={{ fontSize: "5.5rem", margin: "20px 0", color: "#5A241E" }}>
+                LIVE
               </h3>
-              <p>
-                A deep-dive into monochromatic textures and high-contrast digital layouts for a Parisian couture house.
+              <p style={{ color: "#ccc", lineHeight: 1.6, fontSize: "1.05rem" }}>
+                Turnkey multi-camera live streaming, produced on location or inside our studio. We handle the entire broadcast pipeline — cinema cameras, studio lighting, pro audio, live switching, and real-time on-air graphics.
               </p>
               <div className="divider"></div>
-              <p>YEAR: 2024</p>
+              <a
+                href="#contact"
+                style={{
+                  display: "inline-block",
+                  padding: "16px 36px",
+                  border: "1px solid var(--fg)",
+                  fontFamily: "var(--syne)",
+                  fontSize: "0.85rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "var(--fg)",
+                  textDecoration: "none",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "var(--accent)"
+                  e.currentTarget.style.borderColor = "var(--accent)"
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "transparent"
+                  e.currentTarget.style.borderColor = "var(--fg)"
+                }}
+              >
+                LEARN MORE
+              </a>
             </div>
+
             <div className="project-media">
-              <img
-                src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1000"
-                alt="Noir Project"
-                className="project-image"
-              />
+              <div style={{ position: "relative", overflow: "hidden", border: "1px solid var(--gray)" }}>
+                <img
+                  src={livePhotos[currentSlide]}
+                  alt={`Live streaming setup ${currentSlide + 1}`}
+                  className="project-image"
+                  style={{ height: "520px", display: "block" }}
+                />
+
+                {/* Left Arrow */}
+                <button
+                  onClick={prevSlide}
+                  aria-label="Previous slide"
+                  style={{
+                    position: "absolute",
+                    left: "20px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    width: "46px",
+                    height: "46px",
+                    borderRadius: "50%",
+                    border: "1px solid rgba(255, 255, 255, 0.4)",
+                    background: "rgba(14, 14, 14, 0.65)",
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "1.2rem",
+                    backdropFilter: "blur(4px)",
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  ←
+                </button>
+
+                {/* Right Arrow */}
+                <button
+                  onClick={nextSlide}
+                  aria-label="Next slide"
+                  style={{
+                    position: "absolute",
+                    right: "20px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    width: "46px",
+                    height: "46px",
+                    borderRadius: "50%",
+                    border: "1px solid rgba(255, 255, 255, 0.4)",
+                    background: "rgba(14, 14, 14, 0.65)",
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "1.2rem",
+                    backdropFilter: "blur(4px)",
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  →
+                </button>
+
+                {/* Slide Counter */}
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "16px",
+                    right: "20px",
+                    fontFamily: "var(--syne)",
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.15em",
+                    background: "rgba(14, 14, 14, 0.75)",
+                    padding: "6px 12px",
+                    border: "1px solid rgba(255, 255, 255, 0.15)",
+                  }}
+                >
+                  0{currentSlide + 1} / 0{livePhotos.length}
+                </div>
+              </div>
+
               <div className="floating-label huge-type outline-text" style={{ fontSize: "8rem" }}>
-                SHADOW
+                BROADCAST
               </div>
             </div>
           </div>
